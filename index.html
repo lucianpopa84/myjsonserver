@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fetch jsonplaceholder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+        <form onsubmit="search()" id="searchForm">
+            <input type="button" id="displayRestaurants" value="Display all restaurants"> 
+            <input type="text" id="searchFormInput"> <input type="submit" value="Search by restaurant ID">
+        </form>
+        <h2>Restaurants List:</h2>
+        <table id="resultsList">
+        </table>
+        <h2>Restaurant Data:</h2>
+        <table id="restaurantDataTable">
+        </table>
+</body>
+<script src="app.js"></script>
+
+</html>

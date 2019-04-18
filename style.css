@@ -1,0 +1,20 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+#resultsList tr:nth-child(even) {
+  background-color: #eee;
+}
+
+#resultsList tr:nth-child(odd) {
+ background-color: #fff;
+}
+
+#restaurantDataTable {
+  margin-top: 10px;
+}
