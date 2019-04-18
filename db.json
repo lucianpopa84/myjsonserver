@@ -158,36 +158,6 @@
         "price": 16
     },
     {
-        "name": "Pizza Calzone",
-        "restaurantId": "pizzaForum",
-        "foodType": "pizza",
-        "imageSrc": "images/foodType/pizza.png",
-        "imageAlt": "Pizza Calzone",
-        "ingredients": "mozzarella 120g, mushrooms 60g, tomato souce 50g, prosciutto 30g, basil 3g, olive oil 2g",
-        "rating": 4,
-        "price": 22
-    },
-    {
-        "name": "Pizza Quattro Formaggi",
-        "restaurantId": "pizzaForum",
-        "foodType": "pizza",
-        "imageSrc": "images/foodType/pizza.png",
-        "imageAlt": "Pizza Quattro Formaggi",
-        "ingredients": "mozzarella 120g, gorgonzola, cheese, parmigiano, olive oil 2g",
-        "rating": 5,
-        "price": 22
-    },
-    {
-        "name": "Pizza Prosciutto e Funghi",
-        "restaurantId": "pizzaForum",
-        "foodType": "pizza",
-        "imageSrc": "images/foodType/pizza.png",
-        "imageAlt": "Pizza Prosciutto e Funghi",
-        "ingredients": "mozzarella 135g, prosciutto cotto 50g, mushrooms, tomato souce 50g",
-        "rating": 5,
-        "price": 18
-    },
-    {
         "name": "Pizza Charlie",
         "restaurantId": "pizzaCharlie",
         "foodType": "pizza",
@@ -205,46 +175,6 @@
         "imageAlt": "Pizza Calzone",
         "ingredients": "mozzarella 120g, mushrooms 60g, tomato souce 50g, prosciutto 30g, basil 3g, olive oil 2g",
         "rating": 4,
-        "price": 23
-    },
-    {
-        "name": "Pizza Quattro Formaggi",
-        "restaurantId": "pizzaCharlie",
-        "foodType": "pizza",
-        "imageSrc": "images/foodType/pizza.png",
-        "imageAlt": "Pizza Quattro Formaggi",
-        "ingredients": "mozzarella 120g, gorgonzola, cheese, olive oil 2g",
-        "rating": 5,
-        "price": 23
-    },
-    {
-        "name": "Pizza Diavolo",
-        "restaurantId": "pizzaCharlie",
-        "foodType": "pizza",
-        "imageSrc": "images/foodType/pizza.png",
-        "imageAlt": "Pizza Diavolo",
-        "ingredients": "mozzarella 135g, chorizo salamy 50g, tomato souce 50g, hot peppers",
-        "rating": 5,
-        "price": 23
-    },
-    {
-        "name": "Carbonara",
-        "restaurantId": "pizzaCharlie",
-        "foodType": "pasta",
-        "imageSrc": "images/foodType/pasta.png",
-        "imageAlt": "Carbonara",
-        "ingredients": "penne, ham, bacon, egg, parmigiano, garlic, white wine",
-        "rating": 5,
-        "price": 23
-    },
-    {
-        "name": "Penne Quattro Formaggi",
-        "restaurantId": "pizzaCharlie",
-        "foodType": "pasta",
-        "imageSrc": "images/foodType/pasta.png",
-        "imageAlt": "Penne Quattro Formaggi",
-        "ingredients": "penne, gorgonzolla, parmigiano, cheese, cream, garlic",
-        "rating": 5,
         "price": 23
     },
     {
@@ -266,36 +196,6 @@
         "ingredients": "mozzarella 135g, tomato souce 90g, olive oil 2g",
         "rating": 3,
         "price": 18
-    },
-    {
-        "name": "Pizza Calzone",
-        "restaurantId": "pizzaPeters",
-        "foodType": "pizza",
-        "imageSrc": "images/foodType/pizza.png",
-        "imageAlt": "Pizza Calzone",
-        "ingredients": "mozzarella 120g, mushrooms 60g, tomato souce 50g, prosciutto 30g, basil 3g, olive oil 2g",
-        "rating": 4,
-        "price": 22
-    },
-    {
-        "name": "Penne Quattro Formaggi",
-        "restaurantId": "pizzaPeters",
-        "foodType": "pasta",
-        "imageSrc": "images/foodType/pasta.png",
-        "imageAlt": "Penne Quattro Formaggi",
-        "ingredients": "penne, gorgonzolla, parmigiano, cheese, cream, garlic",
-        "rating": 5,
-        "price": 23
-    },
-    {
-        "name": "Carbonara",
-        "restaurantId": "pizzaPeters",
-        "foodType": "pasta",
-        "imageSrc": "images/foodType/pasta.png",
-        "imageAlt": "Carbonara",
-        "ingredients": "penne, ham, bacon, egg, parmigiano, garlic, white wine",
-        "rating": 5,
-        "price": 23
     },
     {
         "name": "Pizza El Greco",
@@ -368,26 +268,6 @@
         "price": 14
     },
     {
-        "name": "Pizza Parmigiana",
-        "restaurantId": "NapoliCentrale",
-        "foodType": "pizza",
-        "imageSrc": "images/foodType/pizza.png",
-        "imageAlt": "Pizza Parmigiana",
-        "ingredients": "mozzarella 120g, tomato souce 50g, parmigiano slices",
-        "rating": 4,
-        "price": 29
-    },
-    {
-        "name": "Pizza Romana",
-        "restaurantId": "NapoliCentrale",
-        "foodType": "pizza",
-        "imageSrc": "images/foodType/pizza.png",
-        "imageAlt": "Pizza Romana",
-        "ingredients": "mozzarella 120g, tomato souce 50g, tuna",
-        "rating": 4,
-        "price": 28
-    },
-    {
         "name": "Pizza Grande",
         "restaurantId": "Grande",
         "foodType": "pizza",
@@ -396,16 +276,6 @@
         "ingredients": "mozzarella 120g, chicken, bacon, parmigiano, garlic",
         "rating": 4,
         "price": 27
-    },
-    {
-        "name": "Pizza Quattro Formaggi",
-        "restaurantId": "Grande",
-        "foodType": "pizza",
-        "imageSrc": "images/foodType/pizza.png",
-        "imageAlt": "Pizza Quattro Formaggi",
-        "ingredients": "mozzarella 120g, gorgonzola, cheese, parmigiano, olive oil 2g",
-        "rating": 5,
-        "price": 31
     },
     {
         "name": "Pizza Romana",
@@ -427,8 +297,5 @@
         "rating": 5,
         "price": 25
     }
-],
-    "profile": {
-      "name": "typicode"
-    }
+  ]
 }
