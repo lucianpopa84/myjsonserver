@@ -30,7 +30,6 @@ function getRestaurants(url){
   fetch(url)
   .then(response => response.json())
   .then(restaurantsData => {
-    //   console.log("usersData",usersData);
       let listHtmlContent =`
         <tr>
             <th>Id</th>
@@ -42,7 +41,6 @@ function getRestaurants(url){
         `;
       for (let i of restaurantsData.keys()){
           if (i <= numItems) {
-            // console.log(`${usersData[i].id} ${usersData[i].name} ${usersData[i].email}`);
             listHtmlContent += `
                 <tr>
                     <td>${restaurantsData[i].name}</td>
@@ -61,22 +59,7 @@ function displayRestaurantData(url){
     fetch(url)
     .then(response => response.json())
     .then(restaurantData => {
-        // let listHtmlContent =`
-        //     <tr>
-        //         <th>Id</th>
-        //         <th>Name</th> 
-        //         <th>Food type</th>
-        //         <th>Location</th>
-        //         <th>Working hours</th>
-        //     </tr>
-        //     <tr>
-        //         <td>${restaurantData.id}</td>
-        //         <td>${restaurantData.name}</td>
-        //         <td>${restaurantData.foodType.join(", ")}</td>
-        //         <td>${restaurantData.location}</td>
-        //         <td>${restaurantData.operHour} - ${restaurantData.closeHour}</td>
-        //     </tr>`;
-        let listHtmlContent =`
+        let listHtmlContent = `
             <tr>
                 <th>Name:</th>
                 <td>${restaurantData.name}</td>
@@ -86,12 +69,15 @@ function displayRestaurantData(url){
                 <td>${restaurantData.id}</td>
             </tr>
             <tr>
-                <th rowspan="2">Food type:</th>
-                 <td>${restaurantData.foodType[0]}</td>
-            </tr>
+                <th rowspan="${restaurantData.foodType.length}">Food type:</th>`
+            for (let i of restaurantData.foodType.keys()){
+                listHtmlContent += `
+                <td>${restaurantData.foodType[i]}</td>
+                </tr>
                 <tr>
-                <td>${restaurantData.foodType[1]}</td>
-            </tr>
+                `
+            }
+            listHtmlContent +=`
             <tr>
                 <th>Location:</th>
                 <td>${restaurantData.location}</td>
