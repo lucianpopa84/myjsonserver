@@ -18,3 +18,16 @@ th, td {
 #restaurantDataTable {
   margin-top: 10px;
 }
+
+input{
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#displayRestaurants {
+  margin-right: 20px;
+}
+
+#searchFormInput {
+  margin-right: 20px;
+}

@@ -9,14 +9,24 @@
 </head>
 
 <body>
+        <h2>Restaurants</h2>
+        <h4>My typicode json server</h4>
         <form onsubmit="search()" id="searchForm">
             <input type="button" id="displayRestaurants" value="Display all restaurants"> 
-            <input type="text" id="searchFormInput"> <input type="submit" value="Search by restaurant ID">
+            <input type="submit" value="Search by restaurant ID">
+            <input type="text" id="searchFormInput" placeholder="Input restaurant ID">
+            <input type="button" id="displayRestaurantsByCity" value="Display restaurants from"> 
+            <input list="cityDeliveryList" id="cityDeliveryListInput" name="City" placeholder="Choose city">
+            <datalist id="cityDeliveryList">
+                <option value="Craiova">
+                <option value="Brasov">
+                <option value="Cluj-Napoca">
+            </datalist>
         </form>
-        <h2>Restaurants List:</h2>
+        <h2 id="restaurantsListTitle"></h2>
         <table id="resultsList">
         </table>
-        <h2>Restaurant Data:</h2>
+        <h2 id="restaurantDetailsTitle"></h2>
         <table id="restaurantDataTable">
         </table>
 </body>
