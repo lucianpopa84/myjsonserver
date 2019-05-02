@@ -41,6 +41,14 @@
         {
             "name": "salads",
             "id": 7
+        },
+        {
+            "name": "daily menu",
+            "id": 8
+        },
+        {
+            "name": "romanian",
+            "id": 9
         }
     ],
     "restaurants": [
