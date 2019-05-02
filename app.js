@@ -8,28 +8,49 @@ const restaurantsListTitle = document.querySelector("#restaurantsListTitle");
 const restaurantDetailsTitle = document.querySelector("#restaurantDetailsTitle");
 const cityDelivery = document.querySelector("#cityDeliveryListInput");
 const numItems = 10; // number of items to display
+var locality = "";
 
 // display restaurants
 function display() {
     let url = `https://my-json-server.typicode.com/lucianpopa84/myjsonserver/restaurants`;
     getRestaurants(url);
-} 
+}
 
 // display restaurants by city
 function displayByCity() {
-    let url = `https://my-json-server.typicode.com/lucianpopa84/myjsonserver/restaurants/?location=${locality}`;
-    getRestaurants(url);
-} 
+    if (locality == undefined) {
+        resultsList.innerHTML = "Delivery not available for your area";
+    } else {
+        let url = `https://my-json-server.typicode.com/lucianpopa84/myjsonserver/cities?q=${locality}`;
+        getCityId(url);
+    }
+}
 
 // search restaurants
 function search() {
     let inputValue = searchFormInput.value;
     console.log("inputValue: ", inputValue);
-    let url = `https://my-json-server.typicode.com/lucianpopa84/myjsonserver/restaurants/${inputValue}`;
+    let url = `https://my-json-server.typicode.com/lucianpopa84/myjsonserver/restaurants/?id=${inputValue}`;
     displayRestaurantData(url);
 }
 
 // ======= fetch json db =======
+function getCityId(url) {
+    fetch(url)
+        .then(response => response.json())
+        .then(cityData => {
+            if (cityData.length == 1) {
+                console.log("cityData[0].id: ", cityData[0].id);
+                cityId = cityData[0].id;
+                let url = `https://my-json-server.typicode.com/lucianpopa84/myjsonserver/restaurants?cityId=${cityId}`;
+                getRestaurants(url);
+            } else {
+                resultsList.innerHTML = "Delivery not available for your area";
+            }
+
+        }).catch(error => console.log("error: ", error.message));
+}
+
 function getRestaurants(url) {
     fetch(url)
         .then(response => response.json())
@@ -38,10 +59,10 @@ function getRestaurants(url) {
             resultsList.innerHTML = "Loading data...";
             let listHtmlContent = `
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Name</th> 
-            <th>Food type</th>
-            <th>Location</th>
+            <th>Food type id</th>
+            <th>City id</th>
             <th>Working hours</th>
         </tr>
         `;
@@ -49,10 +70,10 @@ function getRestaurants(url) {
                 if (i <= numItems) {
                     listHtmlContent += `
                 <tr>
-                    <td>${restaurantsData[i].name}</td>
                     <td>${restaurantsData[i].id}</td>
-                    <td>${restaurantsData[i].foodType.join(", ")}</td>
-                    <td>${restaurantsData[i].location}</td>
+                    <td>${restaurantsData[i].name}</td>
+                    <td>${restaurantsData[i].foodTypeId}</td>
+                    <td>${restaurantsData[i].cityId}</td>
                     <td>${restaurantsData[i].operHour} - ${restaurantsData[i].closeHour}</td>
                 </tr>`;
                 }
@@ -65,39 +86,42 @@ function displayRestaurantData(url) {
     fetch(url)
         .then(response => response.json())
         .then(restaurantData => {
-            restaurantDetailsTitle.innerHTML = "Restaurant data: ";
-            restaurantDataTable.innerHTML = "Loading data...";
-            let listHtmlContent = `
-            <tr>
-                <th>Name:</th>
-                <td>${restaurantData.name}</td>
-            </tr>
-            <tr>
-                <th>Id:</th>
-                <td>${restaurantData.id}</td>
-            </tr>
-            <tr>
-                <th rowspan="${restaurantData.foodType.length}">Food type:</th>`
-            for (let i of restaurantData.foodType.keys()) {
-                listHtmlContent += `
-                <td>${restaurantData.foodType[i]}</td>
+            if (restaurantData.length >= 1) {
+                restaurantDetailsTitle.innerHTML = "Restaurant data: ";
+                restaurantDataTable.innerHTML = "Loading data...";
+                let listHtmlContent = `
+                <tr>
+                    <th>Name:</th>
+                    <td>${restaurantData[0].name}</td>
                 </tr>
                 <tr>
-                `
+                    <th>Id:</th>
+                    <td>${restaurantData[0].id}</td>
+                </tr>
+                <tr>
+                    <th rowspan="${restaurantData.length}">Food type Id:</th>`
+                for (let i of restaurantData.keys()) {
+                    listHtmlContent += `
+                    <td>${restaurantData[i].foodTypeId}</td>
+                    </tr>
+                    <tr>
+                    `
+                }
+                listHtmlContent += `
+                <tr>
+                    <th>City Id:</th>
+                    <td>${restaurantData[0].cityId}</td>
+                </tr>
+                <tr>
+                    <th>Working hours:</th>
+                    <td>${restaurantData[0].operHour} - ${restaurantData[0].closeHour}</td>
+                </tr>
+                `;
+                restaurantDataTable.innerHTML = listHtmlContent;
+            } else {
+                restaurantDataTable.innerHTML = "No restaurant found with this id ";
             }
-            listHtmlContent += `
-            <tr>
-                <th>Location:</th>
-                <td>${restaurantData.location}</td>
-            </tr>
-            <tr>
-                <th>Working hours:</th>
-                <td>${restaurantData.operHour} - ${restaurantData.closeHour}</td>
-            </tr>
-            `;
-
-            restaurantDataTable.innerHTML = listHtmlContent;
-        }).catch(error => console.log("error: ", error.message));
+        });
 }
 
 
@@ -116,6 +140,7 @@ function attachEvents() {
 
     cityDelivery.onclick = () => {
         cityDelivery.value = "";
+        locality = "";
     };
 }
 
